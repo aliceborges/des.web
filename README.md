@@ -39,6 +39,7 @@ git init
 ```
 ```
 git remote add origin https://github.com/aliceborges/des.web.git
+git pull --rebase origin master
 ```
 ##### ou:
 ```
@@ -47,7 +48,6 @@ git clone https://github.com/aliceborges/des.web.git
 ```
 git config --global user.name "Alice"
 git config --global user.email "alice@gmail.com"
-git pull --rebase origin master
 git push -u origin master
 ```
 
