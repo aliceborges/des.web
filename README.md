@@ -51,5 +51,12 @@ git pull --rebase origin master
 git push -u origin master
 ```
 
+####Adicionando o Django:
+```
+django-admin startproject tango_with_django_project
+cd tango_with_django_project
+python manage.py runserver
+```
+
 
 
