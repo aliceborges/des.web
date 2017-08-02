@@ -51,6 +51,14 @@ git pull --rebase origin master
 git push -u origin master
 ```
 
+#### Commit:
+```
+git status
+git add .
+git commit -m ""
+git push -u origin master
+```
+
 #### Adicionando o Django:
 ```
 django-admin startproject tango_with_django_project
