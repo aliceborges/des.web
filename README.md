@@ -70,7 +70,7 @@ python manage.py runserver
 
 #### Abrir o projeto
 #### Fazer as devidas alterações
-#### Crtl + k para dar commit
+#### Crtl + k para commitar
 
 
 
