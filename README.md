@@ -66,5 +66,11 @@ cd tango_with_django_project
 python manage.py runserver
 ```
 
+### Desenvolvendo com o PyCharm:
+
+#### Abrir o projeto
+#### Fazer as devidas alterações
+#### Crtl + k para dar commit
+
 
 
