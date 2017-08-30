@@ -1,0 +1,134 @@
+/*
+
+    font-family: 'Lato', sans-serif;
+
+    font-family: 'Roboto Condensed', sans-serif;
+
+    font-family: 'Montserrat', sans-serif;
+
+    font-family: 'Ubuntu', sans-serif;
+
+*/
+
+body {
+    background-color: #f3eeee;
+    font-family: 'Ubuntu', sans-serif;
+    color:  #6B6666;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 15px 0;
+    font-family: 'Montserrat', sans-serif;
+    color: #2f343b;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+a {
+	color: #2f343b;
+}
+
+a:hover {
+	text-decoration: none;
+	color: #17AA50;
+}
+
+.navbar {
+    background-color: #fff;
+    border-top: 1px solid #e4e4e4;
+    -webkit-box-shadow: 0 1px 5px #dcdddd;
+    box-shadow: 0 1px 5px #dcdddd;
+    font-family: Lato,sans-serif;
+    padding: 5px 0;
+}
+	.navbar-toggle .icon-bar {
+	    background: #9a9a90;;
+	}
+
+	.navbar li a, .navbar-brand {
+	    display: block;
+	    position: relative;
+	    color: #9a9a90;
+	    text-transform: uppercase;
+	    font-weight: 900;
+	    text-decoration: none;
+
+	}
+
+	.navbar-brand {
+    	margin-left: 15px !important;
+    	font-family: 'Montserrat', sans-serif;
+	}
+
+.posts {
+	margin: 75px 0 0 0;
+}
+
+	.post{
+		margin: 0 0 15px 0;
+		padding: 15px;
+		background: #fff;
+	}
+		.post .date {
+			font-style: italic;
+			color: rgb(169, 188, 189);
+		}
+
+		.post p {
+			line-height: 25px;
+			font-size: 16px;
+		}
+
+		.post h2 {
+			font-size: 22px;
+			margin: 5px 0 20px 0;
+			position: relative;
+		}
+
+		.post h2::after {
+		    content    : "";
+		    width      : 55px;
+		    height     : 3px;
+		    background : #1abc9c;
+		    position   : absolute;
+		    left       : 0px;
+		    bottom     : -12px;
+
+		}
+
+.footer {
+	min-height: 100px;
+	padding   : 20px;
+	background: #fff;
+	text-align: center;
+	display   : block;
+	position  : relative;
+	background: url("bg.jpg");
+}
+
+.btn-floating {
+    position   : fixed;
+
+    z-index    : 1;
+    width      : 50px;
+    height     : 50px;
+    line-height: 50px;
+    color      : #fff;
+    background : #26a69a;
+    border-radius: 50%;
+    cursor     : pointer;
+    box-shadow : 0 2px 5px 0 rgba(0,0,0,0.16),
+    			 0 2px 10px 0 rgba(0,0,0,0.12);
+    right      : 10px;
+    bottom     : 118px;
+	text-align : center;
+
+}
+
+.highlight {
+	font-family : 'Montserrat', sans-serif;
+	font-size   : 35px;
+	margin      : 25px 0 25px 0;
+	color       : #fff;
+	text-shadow : 2px 2px 2px #000;
+}
