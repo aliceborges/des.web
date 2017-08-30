@@ -14,8 +14,4 @@ def index(request):
 	return render(request, 'rango/index.html', context_dict)
 
 def about(request):
-	pagina = '''
-	Sobre a página. <br>
-	<a href='/rango/'>Retornar a página principal </a>
-	''';
-	return HttpResponse(pagina);
+    return render(request, 'rango/about.html', {'autor': 'Alice Borges'})
