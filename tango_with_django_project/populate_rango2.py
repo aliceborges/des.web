@@ -8,8 +8,14 @@ django.setup()
 from rango.models import Category, Page
 
 def populate():
-    pages = open('populate_rango_2.csv').readlines()
+    categories = open('populate_rango_categories.csv').readlines()
 
+    print('Populating %d categories...' % len(categories))
+    for categorie in categories:
+        cat, views, likes = categorie.strip().split(',')
+        c = add_cat(cat, views, likes)
+
+    pages = open('populate_rango_pages.csv').readlines()
     print('Populating %d pages...' %len(pages))
     for page in pages:
         cat, title, url = page.strip().split(',')
@@ -26,13 +32,19 @@ def show():
 
 def add_page(cat, title, url, views=0):
     p = Page.objects.get_or_create(category=cat, title=title)[0]
-    p.url=url
-    p.views=views
+    p.url = url
+    p.views = views
     p.save()
     return p
 
-def add_cat(name):
+def add_cat(name, views=0, likes=0):
     c = Category.objects.get_or_create(name=name)[0]
+
+    if not c.views:
+        c.views = views
+    if not c.likes:
+        c.likes = likes
+
     c.save()
     return c
 
