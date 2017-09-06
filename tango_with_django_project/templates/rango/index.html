@@ -15,11 +15,19 @@
         <strong>{{bold_message}}</strong><br/>
     </div>
     <div>
-        <a href="/rango/about/">About</a><br/>
-        <img src="{% static "images/rango.jpg" %}" alt="Foto do Rango" />
+        {% if categories %}
+        <ul>
+            {% for category in categories %}
+                <li> {{ category.name }} ({{ category.likes }})</li>
+            {% endfor %}
+        </ul>
+        {% else %}
+            <strong>Não existem categorias presentes.</strong>
+        {% endif %}
     </div>
     <div>
-        Feito por {{autor}}
+         <a href="/rango/about/">About</a><br />
+         <img src="{% static 'images/rango.jpg' %}" alt="Foto do Rango" />
     </div>
 </body>
 </html>
