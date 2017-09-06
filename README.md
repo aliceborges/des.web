@@ -73,3 +73,10 @@ Abrir o projeto
 Fazer as devidas alterações
 Crtl + k para commitar
 ```
+
+### Migrar quando são feitas novas alterações no SQLite
+
+```
+python manage.py makemigrations
+python manage.py migrate
+```
