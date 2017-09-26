@@ -28,7 +28,8 @@ def show():
     print('Showing pages...')
     for c in Category.objects.all():
         for p in Page.objects.filter(category=c):
-            print("- {0} - {1}".format(str(c), str(p)))
+            print("- %s - %s" %(c.name, p.title))
+            #print("- {0} - {1}".format(str(c.name), str(p.title)))
 
 def add_page(cat, title, url, views=0):
     p = Page.objects.get_or_create(category=cat, title=title)[0]
@@ -52,4 +53,4 @@ def add_cat(name, views=0, likes=0):
 if __name__ == '__main__':
     print("Starting Rango population script...")
     populate()
-    # show()
+    show()
