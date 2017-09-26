@@ -5,20 +5,21 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE',
                       'tango_with_django_project.settings')
 import django
 django.setup()
-from rango.models import Category, Page
+from rango.models import Category,Page
 
 def populate():
     categories = open('populate_rango_categories.csv').readlines()
+    print('Populating %d categories...' %len(categories))
 
-    print('Populating %d categories...' % len(categories))
     for categorie in categories:
-        cat, title, url, views = page.strip().split(',')
+        cat, views, likes = categorie.strip().split(',')
         c = add_cat(cat, views, likes)
 
     pages = open('populate_rango_pages.csv').readlines()
     print('Populating %d pages...' %len(pages))
+
     for page in pages:
-        cat, title, url = page.strip().split(',')
+        cat, title, url, views = page.strip().split(',')
         c = add_cat(cat)
         ok = add_page(c, title, url, views)
 
@@ -28,7 +29,6 @@ def show():
     for c in Category.objects.all():
         for p in Page.objects.filter(category=c):
             print("- {0} - {1}".format(str(c), str(p)))
-
 
 def add_page(cat, title, url, views=0):
     p = Page.objects.get_or_create(category=cat, title=title)[0]
@@ -52,4 +52,4 @@ def add_cat(name, views=0, likes=0):
 if __name__ == '__main__':
     print("Starting Rango population script...")
     populate()
-    show()
+    # show()
