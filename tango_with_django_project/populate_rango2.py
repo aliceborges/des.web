@@ -12,7 +12,7 @@ def populate():
 
     print('Populating %d categories...' % len(categories))
     for categorie in categories:
-        cat, views, likes = categorie.strip().split(',')
+        cat, title, url, views = page.strip().split(',')
         c = add_cat(cat, views, likes)
 
     pages = open('populate_rango_pages.csv').readlines()
@@ -20,7 +20,7 @@ def populate():
     for page in pages:
         cat, title, url = page.strip().split(',')
         c = add_cat(cat)
-        ok = add_page(c, title, url)
+        ok = add_page(c, title, url, views)
 
 def show():
     # Print out the categories we have added.
