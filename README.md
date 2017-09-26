@@ -1,15 +1,27 @@
 # Projeto de Desenvolvimento Web II
+## IFC - Araquari / 2017
+### Projeto desenvolvido em ambiente Linux e com o programa PyCharm
 
 ### Comandos
 
-#### Virtualenvwrapper:
+#### 1. Baixar o repositório:
+```
+git clone https://github.com/aliceborges/des.web.git
+```
+
+
+#### 2. Instalar/Verificar se tem Virtualenvwrapper na máquina:
 ```
 sudo apt install virtualenvwrapper
 mkvirtualenv rango
 workon rango
 ```
 
-#### Dependências:
+#### 3. Entrar na pasta do projeto e instalar as dependências:
+```
+pip install -r requirements.txt 
+```
+Ou:
 ```
 pip freeze
 pip install Django==1.9
@@ -18,10 +30,21 @@ pip freeze > /requirements.txt
 cat requirements.txt
 ```
 
-#### Para instalar as dependências pelo arquivo requirements.txt:
+#### 4. Migrar o SQLite
+
 ```
-pip install -r requirements.txt 
+cd tango_with_django_project
+python manage.py makemigrations
+python manage.py migrate
 ```
+
+#### 5. Rodar o projeto no navegador
+```
+python manage.py runserver
+```
+
+
+### Observações
 
 #### Criar link simbólico:
 ```
@@ -33,24 +56,6 @@ ln -s /home/alice/twd/ django
 echo “Alice Borges” >> contributors.txt
 ```
 
-#### Configurar o git:
-```
-git init
-```
-```
-git remote add origin https://github.com/aliceborges/des.web.git
-git pull --rebase origin master
-```
-##### ou:
-```
-git clone https://github.com/aliceborges/des.web.git
-```
-```
-git config --global user.name "Alice"
-git config --global user.email "alice@gmail.com"
-git push -u origin master
-```
-
 #### Commit:
 ```
 git status
@@ -59,24 +64,10 @@ git commit -m ""
 git push -u origin master
 ```
 
-#### Adicionando o Django:
-```
-django-admin startproject tango_with_django_project
-cd tango_with_django_project
-python manage.py runserver
-```
-
 ### Desenvolvendo com o PyCharm:
 
 ```
 Abrir o projeto
 Fazer as devidas alterações
 Crtl + k para commitar
-```
-
-### Migrar quando são feitas novas alterações no SQLite
-
-```
-python manage.py makemigrations
-python manage.py migrate
 ```
