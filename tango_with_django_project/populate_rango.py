@@ -44,7 +44,8 @@ def show():
     # Print out the categories we have added.
     for c in Category.objects.all():
         for p in Page.objects.filter(category=c):
-            print("- {0} - {1}".format(str(c), str(p)))
+            print("- %s - %s" % (c.name, p.title))
+            # print("- {0} - {1}".format(str(c), str(p)))
 
 
 def add_page(cat, title, url, views=0):
