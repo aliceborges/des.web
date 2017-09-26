@@ -1,6 +1,6 @@
 # Projeto de Desenvolvimento Web II
-## IFC - Araquari / 2017
-### Projeto desenvolvido em ambiente Linux e com o programa PyCharm
+###### IFC - Araquari / 2017
+###### Projeto desenvolvido em ambiente Linux e com o programa PyCharm
 
 ### Comandos
 
@@ -64,7 +64,7 @@ git commit -m ""
 git push -u origin master
 ```
 
-### Desenvolvendo com o PyCharm:
+#### Desenvolvendo com o PyCharm:
 
 ```
 Abrir o projeto
