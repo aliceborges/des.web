@@ -1,11 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Rango</title>
-</head>
+{% extends 'rango/base.html' %}
+{% load staticfiles %}
 
-<body>
+{% block title_block %}
+    Adicionar Nova Categoria
+{% endblock title_block %}
+
+{% block body_block %}
+
     <h1>Adicione uma categoria</h1>
 
     <div>
@@ -23,5 +24,4 @@
         </form>
     </div>
 
-</body>
-</html>
+{% endblock body_block %}
