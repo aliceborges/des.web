@@ -23,5 +23,5 @@
         {% endif %}
     </div>
 
-    <a href="/rango/category/{{category.slug}}/add_page/">Adicionar página em {{ category.name }}</a> <br/>
+    <a href="{% url 'add_page' category.slug %}">Adicionar página em {{ category.name }}</a> <br/>
 {% endblock body_block %}
