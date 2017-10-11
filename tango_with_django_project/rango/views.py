@@ -1,8 +1,10 @@
 #coding:utf-8
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
+from django.contrib.auth import authenticate, login
 from django.shortcuts import render
 from .models import Category, Page
 from .forms import CategoryForm, PageForm, UserForm, UserProfileForm
+from django.core.urlresolvers import reverse
 
 # Create your views here.
 
@@ -106,3 +108,22 @@ def register(request):
                     {'user_form': user_form,
                     'profile_form': profile_form,
                     'registered': registered})
+
+def user_login(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+
+        user = authenticate(username=username, password=password)
+        if user:
+            if user.is_active:
+                login(request, user)
+                return HttpResponseRedirect(reverse('index'))
+            else:
+                return HttpResponse("Sua conta está desabilitada.")
+        else:
+            msg = "Dados de login inválidos: {0}, {1}".format(username, password)
+            print(msg)
+            return HttpResponse(msg)
+    else:
+       return render(request, 'rango/login.html', {})

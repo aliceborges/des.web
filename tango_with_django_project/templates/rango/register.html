@@ -1,0 +1,24 @@
+{% extends 'rango/base.html' %}
+{% load staticfiles %}
+
+{% block title_block %}
+    Inscreva-se
+{% endblock %}
+
+{% block body_block %}
+    <h1>Inscreva-se no Rango</h1>
+    {% if registered %}
+        Rango diz: <strong>obrigado por se inscrever!</strong>
+        <a href="{% url 'index' %}">Volte à página principal.</a><br />
+    {% else %}
+        Rango diz: <strong>inscreva-se aqui!</strong><br />
+        <form id="user_form" method="post" action="{% url 'register' %}"
+              enctype="multipart/form-data">
+            {% csrf_token %}
+
+            {{ user_form.as_p }}
+            {{ profile_form.as_p }}
+            <input type="submit" name="submit" value="Inscreva-se" />
+        </form>
+    {% endif %}
+{% endblock %}
