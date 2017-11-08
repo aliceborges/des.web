@@ -1,5 +1,7 @@
 from django.contrib import admin
+
 from .models import Category, Page, UserProfile
+
 
 class CategoryAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug':('name',)}
