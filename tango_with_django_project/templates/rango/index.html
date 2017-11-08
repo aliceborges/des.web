@@ -5,7 +5,7 @@
     <h1>Rango diz:</h1>
     <div>
         {% if user.is_authenticated %}
-            Olá {{ user.username }}!
+            Olá <strong>{{ user.username }}</strong>, você já nos visitou <strong>{{ visits }}</strong> vezes!
         {% else %}
             Olá parceiro!
         {% endif %}        <strong>{{ bold_message }}</strong><br />
